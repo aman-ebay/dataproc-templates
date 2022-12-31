@@ -16,6 +16,7 @@
 package com.google.cloud.dataproc.templates.gcs;
 
 import static com.google.cloud.dataproc.templates.util.TemplateConstants.PROJECT_ID_PROP;
+import static com.google.cloud.dataproc.templates.util.TemplateConstants.SPARK_LOG_LEVEL;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -80,6 +81,10 @@ public class GCSToJDBCConfig {
   @Min(value = 0)
   private String customSparkPartitions;
 
+  @JsonProperty(value = SPARK_LOG_LEVEL)
+  @Pattern(regexp = "ALL|DEBUG|ERROR|FATAL|INFO|OFF|TRACE|WARN")
+  private String sparkLogLevel;
+
   public String getInputLocation() {
     return inputLocation;
   }
@@ -119,6 +124,10 @@ public class GCSToJDBCConfig {
 
   public String getCustomSparkPartitions() {
     return customSparkPartitions;
+  }
+
+  public String getSparkLogLevel() {
+    return sparkLogLevel;
   }
 
   @Override
