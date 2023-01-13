@@ -39,7 +39,7 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <spark.version>3.3.1</spark.version>
-    <scala.binary.version>2.13</scala.binary.version>
+    <scala.binary.version>2.12</scala.binary.version>
     <gcs.version>2.4.5</gcs.version>
     <project.version>3.1</project.version>
     <junit-platform.version>5.7.2</junit-platform.version>
@@ -132,12 +132,12 @@
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql-kafka-0-10_${scala.binary.version}</artifactId>
-      <version>${spark.version}</version>
+      <version>3.2.0</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector -->
     <dependency>
       <groupId>com.datastax.spark</groupId>
-      <artifactId>spark-cassandra-connector_2.12</artifactId>
+      <artifactId>spark-cassandra-connector_${scala.binary.version}</artifactId>
       <version>3.1.0</version>
     </dependency>
     <dependency>
