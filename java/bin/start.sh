@@ -78,6 +78,7 @@ OPT_DEPS_BUCKET="--deps-bucket=${GCS_STAGING_LOCATION}"
 OPT_FILES="--files=${GCS_STAGING_LOCATION}/log4j-spark-driver-template.properties"
 OPT_PROPERTIES="--properties=spark.driver.extraJavaOptions=-Dlog4j.configuration=file:log4j-spark-driver-template.properties"
 OPT_CLASS="--class=com.google.cloud.dataproc.templates.main.DataProcTemplate"
+OPT_VERSION="--version=2.0"
 
 # Optional arguments
 if [ -n "${SUBNET}" ]; then
@@ -151,7 +152,8 @@ elif [ "${JOB_TYPE}" == "SERVERLESS" ]; then
       ${OPT_CLASS} \
       ${OPT_SUBNET} \
       ${OPT_HISTORY_SERVER_CLUSTER} \
-      ${OPT_METASTORE_SERVICE}
+      ${OPT_METASTORE_SERVICE} \
+      ${OPT_VERSION}
 EOF
 )
 else
